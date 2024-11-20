@@ -1,0 +1,28 @@
+<section class="container">
+    <section class="d-flex justify-content-between mt-4">
+        <h2>Página inicial do Reparo</h2>
+        <a href="/reparo/create" class="btn btn-primary">Cadastrar novo reparo</a>
+    </section>
+</section>
+
+<section class="my-4 container">
+    <div class="row">
+        {{#each dados}}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Carro: {{dataValues.carro}}</h5>
+                    <p class="card-text">
+                        <strong>Data:</strong> {{dataValues.data}} <br>
+                        <strong>Tipo de Reparo:</strong> {{dataValues.tipo_reparo}} <br>
+                        <strong>Preço:</strong> R$ {{dataValues.preco}}
+                    </p>
+                    <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                </div>
+            </div>
+        </div>
+        {{!-- Modal para exclusão --}}
+        {{>modalDeleteReparo idItem=dataValues.id}}
+        {{/each}}
+    </div>
+</section>

@@ -1,0 +1,35 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Reparo</h1>
+    <form action="/reparo/store" method="post">
+        {{!-- Campo 1: Nome --}}
+        <section class="mb-2">
+            <label for="carro">Carro</label>
+            <input type="text" name="carro" id="carro" class="form-control"required>
+        </section>
+
+        {{!-- CAMPO 2: Especialidade E CARGO --}}
+        <section class="row mb-2">
+            <div class="col-md-6">
+                <label for="data">Data</label>
+                <input type="text" name="data" id="data" class="form-control"required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="tipo_reparo">Tipo de Reparo</label>
+                <input type="text" name="tipo_reparo" id="tipo_reparo" class="form-control"required>
+            </div>
+        </section>
+        {{!-- Campo 1: Nome --}}
+        <section class="mb-2">
+            <label for="preco">Preço</label>
+            <input type="text" name="preco" id="preco" class="form-control"required>
+        </section>
+        {{!-- CAMPO 3 - SELECIONAR CÓDIGO DO DEPARTAMENTO --}}
+        
+
+        {{!-- CAMPO 4: BOTÃO DE CADASTRAR --}}
+        <section class="mb-2 d-flex justify-content-end">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </section>
+    </form>
+</section>

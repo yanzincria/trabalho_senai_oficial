@@ -1,0 +1,38 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Mecanicos</h1>
+    <form action="/mecanico/store" method="post">
+        {{!-- Campo 1: Nome --}}
+        <section class="mb-2">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control"required>
+        </section>
+
+        {{!-- CAMPO 2: Especialidade E CARGO --}}
+        <section class="row mb-2">
+            <div class="col-md-6">
+                <label for="especialidade">especialidade</label>
+                <input type="text" name="especialidade" id="especialidade" class="form-control"required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="contato">contato</label>
+                <input type="text" name="contato" id="contato" class="form-control"required>
+            </div>
+        </section>
+        <section class="mb-2">
+            <label for="mecanico">Escolha o TIPO DE reparo</label>
+            <select name="mecanico" id="mecanico" class="form-select"required>
+                <option value="">Escolha uma opção...</option>
+                {{#each dados}}
+                <option value="{{dataValues.id}}">{{dataValues.tipo_reparo}}</option>
+                {{/each}}
+
+            </select>
+        </section>
+
+        {{!-- CAMPO 4: BOTÃO DE CADASTRAR --}}
+        <section class="mb-2 d-flex justify-content-end">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </section>
+    </form>
+</section>
